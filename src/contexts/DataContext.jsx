@@ -1,4 +1,4 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
 // CREAZIONE CONTESTO
 const DataContext = createContext()
@@ -6,8 +6,9 @@ const DataContext = createContext()
 // DEFINISCO UN CUSTOM PROVIDER
 function DataProvider({children}) {
 
+     const [movies, setMovies]= useState([])
  return (
- <DataContext.Provider value={{}}>{children}</DataContext.Provider>
+ <DataContext.Provider value={{movies, setMovies }}>{children}</DataContext.Provider>
 )
 }
 
