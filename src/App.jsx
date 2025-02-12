@@ -6,12 +6,14 @@
 import Header from "./Components/Header";
 import Main from "./Components/Main";
 
+//-------- IMPORT CONTEXT --------//
+import { DataProvider } from "./contexts/DataContext";
+
 export default function App() {
-  
   return (
-    <>
+    <DataProvider>
       <Header />
       <Main />
-    </>
+    </DataProvider>
   );
 }
