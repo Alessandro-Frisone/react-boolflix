@@ -7,8 +7,9 @@ const DataContext = createContext()
 function DataProvider({children}) {
 
      const [movies, setMovies]= useState([])
+     const [tvShows, setTvShows] = useState([]);
  return (
- <DataContext.Provider value={{movies, setMovies }}>{children}</DataContext.Provider>
+ <DataContext.Provider value={{movies, setMovies, tvShows, setTvShows }}>{children}</DataContext.Provider>
 )
 }
 

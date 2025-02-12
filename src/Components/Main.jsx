@@ -11,7 +11,7 @@ const languageFlags = {
   };
 
 export default function Main() {
-  const { movies } = useDataContext();
+  const { movies, tvShows } = useDataContext();
 
   const getFlag = (language) => {
     const flagUrl = languageFlags[language] || "https://flagcdn.com/w40/un.png";
@@ -28,7 +28,6 @@ export default function Main() {
   return (
     <main>
       <h2>Lista film</h2>
-      
       <ul>
         {movies.map((movie) => (
           <li key={movie.id}>
@@ -36,6 +35,17 @@ export default function Main() {
             <p>Titolo orginale: {movie.original_title}</p>
             <p>Lingua: {getFlag(movie.original_language)} ({movie.original_language})</p>
             <p>Voto: {movie.vote_average}</p>
+          </li>
+        ))}
+      </ul>
+      <h2>Lista Serie TV</h2>
+      <ul>
+        {tvShows.map((show) => (
+          <li key={show.id}>
+            <p>Titolo: {show.name}</p>
+            <p>Titolo originale: {show.original_name}</p>
+            <p>Lingua: {getFlag(show.original_language)} ({show.original_language})</p>
+            <p>Voto: {show.vote_average}</p>
           </li>
         ))}
       </ul>
