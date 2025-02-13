@@ -42,7 +42,6 @@ export default function Main() {
                 <img
                   src={getPosterUrl(movie.poster_path)}
                   alt={`Copertina di ${movie.name}`}
-                  className="w-full h-auto rounded-lg mb-4"
                 />
               )}
               <p>Titolo orginale: {movie.original_title}</p>
@@ -50,9 +49,9 @@ export default function Main() {
                 Lingua: {getFlag(movie.original_language)} (
                 {movie.original_language})
               </p>
-              <p className="flex items-center gap-2">
+              <p>
                 Voto:
-                <span className="text-xl">
+                <span>
                   {[...Array(5)].map((_, index) => (
                     <i
                       key={index}
@@ -81,7 +80,6 @@ export default function Main() {
                 <img
                   src={getPosterUrl(show.poster_path)}
                   alt={`Copertina di ${show.name}`}
-                  className="w-full h-auto rounded-lg mb-4"
                 />
               )}
               <p>Titolo originale: {show.original_name}</p>
@@ -89,7 +87,7 @@ export default function Main() {
                 Lingua: {getFlag(show.original_language)} (
                 {show.original_language})
               </p>
-              <p className="flex items-center gap-2">
+              <p>
                 Voto:
                 <span className="text-yellow-400 text-xl">
                   {[...Array(5)].map((_, index) => (

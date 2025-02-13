@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+*{
+    font-family: "Bebas Neue", serif;
+}
