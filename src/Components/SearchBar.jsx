@@ -35,7 +35,7 @@ export default function SearchBar() {
   return (
     <form onSubmit={handleSearch} className="flex items-center space-x-2">
       <input
-        className="bg-gray-900 text-white border border-gray-700 rounded-md px-3 py-1.5 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500"
+        className="bg-gray-900 text-white border border-gray-700 rounded-md px-3 py-1.5 text-sm shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 w-90"
         name="search"
         type="search"
         placeholder="🔍 Cerca..."
