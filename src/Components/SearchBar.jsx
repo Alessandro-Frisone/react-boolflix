@@ -16,6 +16,7 @@ export default function SearchBar() {
           api_key: "e99307154c6dfb0b4750f6603256716d",
           language: "it-IT",
           query: search,
+          include_adult: true
         },
       })
       .then((res) => setMovies(res.data.results));
@@ -27,6 +28,7 @@ export default function SearchBar() {
         api_key: "e99307154c6dfb0b4750f6603256716d",
         language: "it-IT",
         query: search,
+        include_adult: true
       },
     })
     .then((res) => setTvShows(res.data.results));
