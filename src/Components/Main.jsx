@@ -31,31 +31,37 @@ export default function Main() {
   };
 
   return (
-    <main className="bg-gray-900 min-h-screen">
+    <main className="bg-gray-900 h-auto pb-10 border-t border-gray-700">
       <FastAndFuriousCarousel />
-
-
-      <h2>Lista film</h2>
-      <ul>
-        {movies.map((movie) => {
-          const rating = convertRating(movie.vote_average);
-          return (
-            <li key={movie.id}>
-              <p>Titolo: {movie.title}</p>
-              {movie.poster_path && (
-                <img
-                  src={getPosterUrl(movie.poster_path)}
-                  alt={`Copertina di ${movie.name}`}
-                />
-              )}
-              <p>Titolo orginale: {movie.original_title}</p>
-              <p>
-                Lingua: {getFlag(movie.original_language)} (
-                {movie.original_language})
-              </p>
-              <p>
-                Voto:
-                <span>
+      <div className="container mx-auto mt-30">
+        {/* Lista Film */}
+        <h2 className="text-white text-center text-5xl mb-6">Lista Film</h2>
+        <ul className="grid grid-cols-5 gap-6">
+          {movies.map((movie) => {
+            const rating = convertRating(movie.vote_average);
+            return (
+              <li
+                key={movie.id}
+                className="card bg-gray-800 p-4 rounded-lg transition-transform duration-300 hover:scale-105"
+              >
+                <p className="flex justify-between items-center text-white">
+                  Titolo: {movie.title}
+                  <span className="flex items-center gap-2">
+                    {getFlag(movie.original_language)} (
+                    {movie.original_language})
+                  </span>
+                </p>
+                {movie.poster_path && (
+                  <img
+                    src={getPosterUrl(movie.poster_path)}
+                    alt={`Copertina di ${movie.title}`}
+                    className="w-full h-auto mx-auto mt-2 rounded-md"
+                  />
+                )}
+                <p className="text-white mt-2">
+                  Titolo originale: {movie.original_title}
+                </p>
+                <p className="text-yellow-400 text-xl">
                   {[...Array(5)].map((_, index) => (
                     <i
                       key={index}
@@ -67,33 +73,41 @@ export default function Main() {
                       aria-hidden="true"
                     />
                   ))}
-                </span>
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-      <h2>Lista Serie TV</h2>
-      <ul>
-        {tvShows.map((show) => {
-          const rating = convertRating(show.vote_average);
-          return (
-            <li key={show.id}>
-              <p>Titolo: {show.name}</p>
-              {show.poster_path && (
-                <img
-                  src={getPosterUrl(show.poster_path)}
-                  alt={`Copertina di ${show.name}`}
-                />
-              )}
-              <p>Titolo originale: {show.original_name}</p>
-              <p>
-                Lingua: {getFlag(show.original_language)} (
-                {show.original_language})
-              </p>
-              <p>
-                Voto:
-                <span className="text-yellow-400 text-xl">
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Lista Serie TV */}
+        <h2 className="text-white text-center text-5xl mt-12 mb-6">
+          Lista Serie TV
+        </h2>
+        <ul className="grid grid-cols-5 gap-6">
+          {tvShows.map((show) => {
+            const rating = convertRating(show.vote_average);
+            return (
+              <li
+                key={show.id}
+                className="card bg-gray-800 p-4 rounded-lg transition-transform duration-300 hover:scale-105"
+              >
+                <p className="flex justify-between items-center text-white">
+                  Titolo: {show.name}
+                  <span className="flex items-center gap-2">
+                    {getFlag(show.original_language)} ({show.original_language})
+                  </span>
+                </p>
+                {show.poster_path && (
+                  <img
+                    src={getPosterUrl(show.poster_path)}
+                    alt={`Copertina di ${show.name}`}
+                    className="w-full h-auto mx-auto mt-2 rounded-md"
+                  />
+                )}
+                <p className="text-white mt-2">
+                  Titolo originale: {show.original_name}
+                </p>
+                <p className="text-yellow-400 text-xl">
                   {[...Array(5)].map((_, index) => (
                     <i
                       key={index}
@@ -105,12 +119,12 @@ export default function Main() {
                       aria-hidden="true"
                     />
                   ))}
-                </span>
-              </p>
-            </li>
-          );
-        })}
-      </ul>
+                </p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </main>
   );
 }

@@ -5,6 +5,7 @@
 //-------- IMPORT COMPONENTS --------//
 import Header from "./Components/Header";
 import Main from "./Components/Main";
+import Footer from "./Components/Footer";
 
 //-------- IMPORT CONTEXT --------//
 import { DataProvider } from "./contexts/DataContext";
@@ -14,6 +15,7 @@ export default function App() {
     <DataProvider>
       <Header />
       <Main />
+      <Footer/>
     </DataProvider>
   );
 }
