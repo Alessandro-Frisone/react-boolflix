@@ -1,4 +1,5 @@
 import { useDataContext } from "../contexts/DataContext";
+import FastAndFuriousCarousel from "./CaroselSaga";
 
 const languageFlags = {
   en: "https://flagcdn.com/w40/gb.png",
@@ -30,7 +31,10 @@ export default function Main() {
   };
 
   return (
-    <main>
+    <main className="bg-gray-900 min-h-screen">
+      <FastAndFuriousCarousel />
+
+
       <h2>Lista film</h2>
       <ul>
         {movies.map((movie) => {
